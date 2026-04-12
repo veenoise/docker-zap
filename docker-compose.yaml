@@ -1,0 +1,20 @@
+services:
+  zap:
+    image: zaproxy/zap-stable
+    container_name: zap
+    user: zap
+    restart: always
+    ports:
+      - "${ZAP_PORT}:${ZAP_PORT}"
+    env_file:
+      - path: .env
+        required: true
+    command: [
+      "zap-x.sh", 
+      "-daemon", 
+      "-host", "0.0.0.0", 
+      "-port", "${ZAP_PORT}", 
+      "-config", "api.addrs.addr.name=.*", 
+      "-config", "api.addrs.addr.regex=true", 
+      "-config", "api.key=${ZAP_API_KEY}"
+    ]
