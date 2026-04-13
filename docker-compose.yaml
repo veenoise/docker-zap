@@ -11,6 +11,8 @@ services:
     env_file:
       - path: .env
         required: true
+    environment:
+      - JAVA_OPTS=-Djava.awt.headless=true
     command: [
       "zap-x.sh", 
       "-daemon", 
