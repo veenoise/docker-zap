@@ -20,5 +20,6 @@ services:
       "-port", "${ZAP_PORT}", 
       "-config", "api.addrs.addr.name=.*", 
       "-config", "api.addrs.addr.regex=true", 
-      "-config", "api.key=${ZAP_API_KEY}"
+      "-config", "api.key=${ZAP_API_KEY}",
+      "-config", "network.localServers.aliases.alias.name=${EC2_PUBLIC_IP}"
     ]
