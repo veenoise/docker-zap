@@ -44,7 +44,7 @@ The ZAP API will be available at `http://<EC2_PUBLIC_IP>:<ZAP_PORT>`.
 **Example API call from your local machine:**
 
 ```bash
-curl "http://54.12.34.56:8080/JSON/core/view/version/?apikey=your_secure_key"
+curl "http://142.112.199.221:8080/JSON/core/view/version/?apikey=your_secure_key"
 ```
 
 ### Stop ZAP
