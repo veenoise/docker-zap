@@ -11,10 +11,10 @@ services:
     env_file:
       - path: .env
         required: true
-    environment:
-      - JAVA_OPTS=-Djava.awt.headless=true
+    # environment:
+    #   - JAVA_OPTS=-Djava.awt.headless=true
     command: [
-      "zap-x.sh", 
+      "zap.sh", 
       "-daemon", 
       "-host", "0.0.0.0", 
       "-port", "${ZAP_PORT}", 
