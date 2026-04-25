@@ -22,5 +22,6 @@ services:
       "-config", "api.addrs.addr.name=.*", 
       "-config", "api.addrs.addr.regex=true", 
       "-config", "api.key=${ZAP_API_KEY}",
-      "-config", "network.localServers.aliases.alias.name=${EC2_PUBLIC_IP}"
+      "-config", "network.localServers.aliases.alias.name=${EC2_PUBLIC_IP}",
+      "-Xmx6g"
     ]
