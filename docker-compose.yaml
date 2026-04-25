@@ -11,8 +11,9 @@ services:
     env_file:
       - path: .env
         required: true
-    # environment:
-    #   - JAVA_OPTS=-Djava.awt.headless=true
+    volumes:
+      - ./zap-data:/home/zap/.ZAP
+      - ./zap-reports:/zap/reports
     command: [
       "zap.sh", 
       "-daemon", 
