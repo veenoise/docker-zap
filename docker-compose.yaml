@@ -3,7 +3,7 @@ services:
     image: zaproxy/zap-stable
     container_name: zap
     user: zap
-    restart: always
+    restart: unless-stopped
     ports:
       - "${ZAP_PORT}:${ZAP_PORT}"
     extra_hosts:
