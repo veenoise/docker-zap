@@ -21,6 +21,7 @@ services:
       "-config", "api.key=${ZAP_API_KEY}",
       "-config", "network.localServers.aliases.alias.name=${EC2_PUBLIC_IP}",
       "-config", "pscans.maxAlertsPerRule=10",
-      "-config", "scanner.maxScanDurationInMins=5",
+      "-config", "scanner.maxRuleDurationInMins=5",
+      "-config", "scanner.maxScanDurationInMins=60",
       "-Xmx6g"
     ]
