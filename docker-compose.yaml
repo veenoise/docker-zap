@@ -11,9 +11,6 @@ services:
     env_file:
       - path: .env
         required: true
-    volumes:
-      - ./zap-data:/home/zap/.ZAP
-      - ./zap-reports:/zap/reports
     command: [
       "zap.sh", 
       "-daemon", 
@@ -23,5 +20,7 @@ services:
       "-config", "api.addrs.addr.regex=true", 
       "-config", "api.key=${ZAP_API_KEY}",
       "-config", "network.localServers.aliases.alias.name=${EC2_PUBLIC_IP}",
+      "-config", "pscans.maxAlertsPerRule=10",
+      "-config", "scanner.maxScanDurationInMins=5",
       "-Xmx6g"
     ]
